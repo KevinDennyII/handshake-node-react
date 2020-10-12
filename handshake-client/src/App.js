@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import chirpService from "./services/chirpService";
 
-function App() {
+const App = () => {
   const [chirps, setChirps] = useState(null);
 
+  // grabbing chirps once app has loaded
   useEffect(() => {
     if (!chirps) {
       getChirps().then((r) => console.log(r));
     }
   });
 
+  // grabbing chirps from chirp api via chirp service
   const getChirps = async () => {
-    let res = await chirpService.getAll();
-    console.log(res);
-    setChirps(res);
+    let results = await chirpService.getAll();
+    setChirps(results);
   };
 
   const renderChirp = (chirp) => {
@@ -31,11 +32,11 @@ function App() {
         {chirps && chirps.length > 0 ? (
           chirps.map((chirp) => renderChirp(chirp))
         ) : (
-          <p>No chirpin' happenin' here!</p>
+          <p>It's quiet... No chirpin' happenin' here!</p>
         )}
       </ul>
     </div>
   );
-}
+};
 
 export default App;

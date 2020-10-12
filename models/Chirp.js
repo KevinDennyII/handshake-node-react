@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
+// Creating mongodb schema for chirp with 140 text character limit and unique id
 const chirpSchema = new Schema({
   id: {
     type: Number,
