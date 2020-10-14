@@ -20,3 +20,8 @@ In this project we use `Express.js`, a very popular framework for `Node.js` appl
 
 `nodemon` is a package that runs the `node.js` application and listen to any file change, updating the entire app.
 `Concurrently` allows us to run multiple npm commands at the same time.
+
+### Getting Started
+In root of the project folder execute the command `npm run dev`.
+
+This will use `concurrent` to concurrently run the `client` on `localhost:3000` and the `server` on `localhost:5000/api/chirp`.
